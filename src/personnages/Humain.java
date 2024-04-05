@@ -4,7 +4,7 @@ public class Humain {
 	
 	private String nom;
 	private String boissonfavorite;
-	private int nbargent;
+	protected int nbargent;
 	
 	public Humain(String nom,String boissonfavorite,int nbargent) {
 		this.nom = nom;
@@ -50,7 +50,7 @@ public class Humain {
 		nbargent += nbargentgagner;
 	}
 	
-	public void perdreAgent(int nbargentperdu) {
+	public void perdreArgent(int nbargentperdu) {
 		nbargent -= nbargentperdu;
 	}
 	
