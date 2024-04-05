@@ -54,7 +54,10 @@ public class Humain {
 		nbargent -= nbargentperdu;
 	}
 	
-
+	public void argentHumain() {
+		String message = "j'ai " + nbargent + " sous";
+		parler(message);
+	}
 
 
 }
