@@ -8,6 +8,7 @@ import personnages.Yakuza;
 public class HistoireTP4 {
 
 	public static void main(String[] args) {
+		
 		Humain prof = new Humain("Prof","kobumacha",54);
 		prof.direBonjour();
 		prof.acheter("boison",12);
@@ -35,9 +36,14 @@ public class HistoireTP4 {
 		
 		System.out.println("\n");
 		
-		Ronin Roro = new Ronin("Roro", "shochu", 60);
+		Ronin Roro = new Ronin("Roro", "shochu", 60, 1);
 		Roro.direBonjour();
 		Roro.donner(mariano);
+		
+		System.out.println("\n");
+		
+		Roro.provoquer(yaku);
+		
 	}
 
 }
