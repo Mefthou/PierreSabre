@@ -2,7 +2,7 @@ package personnages;
 
 public class Samourais extends Ronin {
 	
-	private String seigneur;
+	protected String seigneur;
 	
 	public Samourais(String seigneur, String nom, String boissonfavorite, int nbargent, int honneur) 
 	{
