@@ -66,7 +66,7 @@ public class Humain {
 	}
 	
 	public void repondre(Humain autreHumain) {
-		autreHumain.direBonjour();
+		this.direBonjour();
 		memoriser(autreHumain);
 	}
 	
