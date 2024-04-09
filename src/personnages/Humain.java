@@ -2,14 +2,20 @@ package personnages;
 
 public class Humain {
 	
+	private static final int NB_MAX_CONNAISSANCE = 30;
+	
 	private String nom;
 	private String boissonfavorite;
 	protected int nbargent;
+	protected int nbConnaissance=0;
+	private Humain[] humain;
+	
 	
 	public Humain(String nom,String boissonfavorite,int nbargent) {
 		this.nom = nom;
 		this.boissonfavorite = boissonfavorite;
 		this.nbargent = nbargent;
+		humain = new Humain[NB_MAX_CONNAISSANCE];
 	}
 	
 	
@@ -25,7 +31,7 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		String message = "Bonjour ! je m'appelle " + nom + "et j'aime boire du "+ boissonfavorite;
+		String message = "Bonjour ! je m'appelle " + nom + " et j'aime boire du "+ boissonfavorite;
 		parler(message);
 	}
 	
@@ -58,6 +64,40 @@ public class Humain {
 		String message = "j'ai " + nbargent + " sous";
 		parler(message);
 	}
+	
+	public void repondre(Humain autreHumain) {
+		autreHumain.direBonjour();
+		memoriser(autreHumain);
+	}
+	
+	
+	public void memoriser(Humain autreHumain) {
+		if(nbConnaissance < humain.length) {
+			humain[nbConnaissance] = autreHumain ;
+			nbConnaissance ++ ;
+		}else {
+			for(int i=0; i<humain.length - 1; i++) {
+				humain[i]= humain[i+1];
+			}
+			humain[humain.length - 1]= autreHumain;
+		}
+		
+	}
+	
+	
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		this.direBonjour();
+		autreHumain.repondre(this);
+		memoriser(autreHumain);
+	}
+	
+	public void listeConnaissance() {
+		parler(" Je connais beaucoup de monde dont : ");
+		for(int i=0; i<nbConnaissance; i++) {
+			System.out.println(humain[i].getNom() + ",");
+		}
+	}
+	
 
 
 }
