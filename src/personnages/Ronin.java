@@ -4,8 +4,9 @@ public class Ronin extends Humain {
 	
 	private int honneur = 1;
 	
-	public Ronin(String nom, String boissonfavorite, int nbargent) {
+	public Ronin(String nom, String boissonfavorite, int nbargent, int honneur) {
 		super(nom, boissonfavorite, nbargent);
+		this.honneur=honneur=1;
 	}
 	
 	public void donner(Commercant beneficiaire) {

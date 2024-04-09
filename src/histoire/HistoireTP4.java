@@ -36,7 +36,7 @@ public class HistoireTP4 {
 		
 		System.out.println("\n");
 		
-		Ronin Roro = new Ronin("Roro", "shochu", 60);
+		Ronin Roro = new Ronin("Roro", "shochu", 60, 1);
 		Roro.direBonjour();
 		Roro.donner(mariano);
 		
